@@ -1,0 +1,18 @@
+{
+    "contents" : "myts <- ts(rnorm(2190,mean=10,sd=3), start=c(2009, 1), \n           end=c(2014, 12), frequency=12)",
+    "created" : 1437393979542.000,
+    "dirty" : true,
+    "encoding" : "",
+    "folds" : "",
+    "hash" : "1930100973",
+    "id" : "2CA1D3C9",
+    "lastKnownWriteTime" : 0,
+    "path" : null,
+    "project_path" : null,
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "type" : "r_source"
+}

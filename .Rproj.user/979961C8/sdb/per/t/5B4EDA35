@@ -1,0 +1,17 @@
+{
+    "contents" : "#test data\n\nlibrary(quantmod) # use for gathering and charting economic data\nlibrary(lubridate) # date functions\n\npar(mfrow = c(2,2)) # four plots on one window/page\n\n# Economic Data from Federal Reserve Bank of St. Louis (FRED system)\n# National Civilian Unemployment Rate (monthly, percentage)\ngetSymbols(\"UNRATENSA\", src=\"FRED\", return.class = \"xts\")\nER <- 100 - UNRATENSA # convert to employment rate\ndimnames(ER)[2] <- \"ER\"\nchartSeries(ER,theme=\"white\")\nER.data.frame <- as.data.frame(ER)\nER.data.frame$date <- ymd(rownames(ER.data.frame))\nER.time.series <- ts(ER.data.frame$ER, \n                     start = c(year(min(ER.data.frame$date)),month(min(ER.data.frame$date))),\n                     end = c(year(max(ER.data.frame$date)),month(max(ER.data.frame$date))),\n                     frequency=12)\n\ntest <- ER.time.series\n\n#Test the function\ncpi(test)\na <- cpi(test,1,5,2)\na[order(a$AIC),]",
+    "created" : 1437391947748.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1822275481",
+    "id" : "5B4EDA35",
+    "lastKnownWriteTime" : 1437393479,
+    "path" : "~/Documents/R/AEDForecast/test (1).R",
+    "project_path" : "test (1).R",
+    "properties" : {
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "type" : "r_source"
+}
